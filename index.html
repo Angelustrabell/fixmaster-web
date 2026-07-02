@@ -492,8 +492,8 @@
 
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
       position: relative;
     }
 
@@ -501,8 +501,8 @@
       content: '';
       position: absolute;
       top: 50px;
-      left: 16.5%;
-      right: 16.5%;
+      left: 10%;
+      right: 10%;
       height: 2px;
       background: var(--border);
       z-index: 0;
@@ -740,7 +740,7 @@
 
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
     }
 
@@ -952,6 +952,7 @@
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1024px) {
       .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
       .categories-grid { grid-template-columns: repeat(4, 1fr); }
       .trust-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -983,9 +984,11 @@
 
       .steps-grid {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
       }
       .steps-grid::before { display: none; }
+
+      .step-number { width: 48px; height: 48px; font-size: 18px; }
 
       .features-grid { grid-template-columns: 1fr; }
 
@@ -1064,7 +1067,7 @@
             <span class="accent">al precio justo</span>
           </h1>
           <p class="hero-desc">
-            Publica lo que necesitas en tu hogar, recibe propuestas de profesionales verificados y elige al que mas te convenga. Todo desde tu celular.
+            Publica lo que necesitas en tu hogar, recibe propuestas de profesionales verificados, negocia tu precio y elige al que mas te convenga. Todo desde tu celular.
           </p>
           <div class="hero-buttons">
             <a href="#descargar" class="btn btn-primary btn-lg">
@@ -1138,27 +1141,39 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Como funciona</span>
-        <h2 class="section-title">Tu servicio en 3 pasos</h2>
-        <p class="section-subtitle">Sin llamadas, sin buscar numeros. Describe tu problema y deja que los profesionales vengan a ti.</p>
+        <h2 class="section-title">Tu servicio en 5 pasos</h2>
+        <p class="section-subtitle">Sin llamadas, sin buscar numeros. Del problema a la solucion, desde tu celular.</p>
       </div>
       <div class="steps-grid">
         <div class="step-card reveal">
           <div class="step-number">1</div>
           <div class="step-icon">&#128247;</div>
-          <h3 class="step-title">Publica tu solicitud</h3>
-          <p class="step-desc">Elige la categoria, describe el problema, sube una foto o video y pon tu direccion.</p>
+          <h3 class="step-title">Publica</h3>
+          <p class="step-desc">Elige la categoria, describe el problema, sube foto o video y fija tu direccion en el mapa.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">2</div>
           <div class="step-icon">&#128178;</div>
           <h3 class="step-title">Recibe propuestas</h3>
-          <p class="step-desc">Varios profesionales te proponen su precio. Compara calificaciones, tiempo y precio.</p>
+          <p class="step-desc">Profesionales cercanos te envian su precio, calificacion y tiempo estimado en tiempo real.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">3</div>
+          <div class="step-icon">&#129309;</div>
+          <h3 class="step-title">Compara y negocia</h3>
+          <p class="step-desc">Elige la que prefieras o contraoferta tu precio. El profesional acepta, negocia o declina.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <div class="step-icon">&#128205;</div>
+          <h3 class="step-title">Sigue en vivo</h3>
+          <p class="step-desc">Ve al profesional en camino con GPS, chatea y recibe avisos de cada cambio de estado.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">5</div>
           <div class="step-icon">&#9989;</div>
-          <h3 class="step-title">Elige y listo</h3>
-          <p class="step-desc">Acepta la propuesta que prefieras. Sigue al profesional en vivo hasta tu puerta.</p>
+          <h3 class="step-title">Paga y califica</h3>
+          <p class="step-desc">Paga directo al profesional, recibe tu factura y califica. El servicio queda en tu historial.</p>
         </div>
       </div>
     </div>
@@ -1175,33 +1190,48 @@
       <div class="features-grid">
         <div class="feature-card reveal">
           <div class="feature-icon">&#128176;</div>
-          <h3 class="feature-title">Subasta de precios</h3>
-          <p class="feature-desc">Los profesionales compiten por tu servicio. Tu eliges el mejor precio, no el unico.</p>
+          <h3 class="feature-title">Subasta con negociacion</h3>
+          <p class="feature-desc">Los profesionales compiten con su precio. Tu comparas, contraofertas y elegis. Precios justos por competencia real.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">&#128205;</div>
-          <h3 class="feature-title">Seguimiento GPS</h3>
-          <p class="feature-desc">Ve en tiempo real cuando el profesional va en camino, con tiempo estimado de llegada.</p>
+          <h3 class="feature-title">Seguimiento GPS en vivo</h3>
+          <p class="feature-desc">Ve al profesional en camino con ubicacion en tiempo real. Navega con Waze o Google Maps.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">&#128172;</div>
           <h3 class="feature-title">Chat en tiempo real</h3>
-          <p class="feature-desc">Comunicate directamente con tu profesional. Indicador de "en linea" y "escribiendo".</p>
+          <p class="feature-desc">Comunicate directo con tu profesional. Indicador de "en linea", "escribiendo" e historial archivado.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">&#128737;&#65039;</div>
           <h3 class="feature-title">Profesionales verificados</h3>
-          <p class="feature-desc">Verificamos la identidad con cedula y selfie. Ve el sello de verificado antes de elegir.</p>
+          <p class="feature-desc">Verificacion de identidad con cedula y selfie. Los verificados llevan el sello &#10004; visible.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon">&#11088;</div>
           <h3 class="feature-title">Calificaciones reales</h3>
-          <p class="feature-desc">Ambas partes califican. Las resenas son de servicios reales completados en la app.</p>
+          <p class="feature-desc">Ambas partes califican al terminar. Solo de servicios reales completados en la app.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#128276;</div>
-          <h3 class="feature-title">Notificaciones al instante</h3>
-          <p class="feature-desc">Te avisamos de cada propuesta, cambio de estado y mensaje. No te pierdes nada.</p>
+          <div class="feature-icon">&#129534;</div>
+          <h3 class="feature-title">Factura automatica</h3>
+          <p class="feature-desc">Al completar el servicio se genera la factura con precio acordado, metodo de pago y datos del profesional.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">&#127968;</div>
+          <h3 class="feature-title">Expediente del hogar</h3>
+          <p class="feature-desc">Cada reparacion queda guardada: fecha, costo, fotos y quien la hizo. Tu hogar tiene memoria.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">&#128188;</div>
+          <h3 class="feature-title">Hoja de vida del oficio</h3>
+          <p class="feature-desc">Para profesionales: un historial verificable de ingresos y trabajos. Util para credito o renta.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">&#128260;</div>
+          <h3 class="feature-title">Una app, dos roles</h3>
+          <p class="feature-desc">Cliente y profesional con la misma cuenta. Cambia de rol desde tu perfil en un toque.</p>
         </div>
       </div>
     </div>
@@ -1240,10 +1270,24 @@
               </div>
             </div>
             <div class="pro-benefit">
+              <div class="pro-benefit-icon">&#128203;</div>
+              <div>
+                <div class="pro-benefit-title">Hoja de vida verificable</div>
+                <div class="pro-benefit-desc">Cada servicio suma a tu historial de ingresos y trabajos. Sirve para credito o declaracion de renta.</div>
+              </div>
+            </div>
+            <div class="pro-benefit">
+              <div class="pro-benefit-icon">&#128663;</div>
+              <div>
+                <div class="pro-benefit-title">Navegacion integrada</div>
+                <div class="pro-benefit-desc">Llega a la direccion del cliente con Waze o Google Maps directo desde la app.</div>
+              </div>
+            </div>
+            <div class="pro-benefit">
               <div class="pro-benefit-icon">&#127873;</div>
               <div>
                 <div class="pro-benefit-title">Programa de referidos</div>
-                <div class="pro-benefit-desc">Invita a otros profesionales y gana dias de visibilidad prioritaria.</div>
+                <div class="pro-benefit-desc">Invita a otros profesionales y gana dias de suscripcion y visibilidad prioritaria.</div>
               </div>
             </div>
           </div>
@@ -1330,22 +1374,32 @@
         <div class="trust-card reveal">
           <div class="trust-icon">&#128737;&#65039;</div>
           <h3 class="trust-title">Identidad verificada</h3>
-          <p class="trust-desc">Cada profesional verifica su identidad con cedula y selfie antes de poder ofrecer servicios.</p>
+          <p class="trust-desc">Los profesionales pueden verificar su identidad con cedula y selfie. Los verificados llevan sello &#10004; visible.</p>
+        </div>
+        <div class="trust-card reveal">
+          <div class="trust-icon">&#128176;</div>
+          <h3 class="trust-title">Precio acordado</h3>
+          <p class="trust-desc">El precio queda registrado antes de empezar. Sin sorpresas ni cobros de mas al terminar.</p>
         </div>
         <div class="trust-card reveal">
           <div class="trust-icon">&#11088;</div>
           <h3 class="trust-title">Calificaciones reales</h3>
-          <p class="trust-desc">Solo de servicios completados en la app. Nada de resenas falsas.</p>
+          <p class="trust-desc">Solo de servicios completados en la app. Nada de resenas falsas ni autocalificaciones.</p>
+        </div>
+        <div class="trust-card reveal">
+          <div class="trust-icon">&#128737;</div>
+          <h3 class="trust-title">Anti-fraude</h3>
+          <p class="trust-desc">No puedes tomar tus propias solicitudes ni autocalificarte. Los precios de las ofertas no se alteran.</p>
         </div>
         <div class="trust-card reveal">
           <div class="trust-icon">&#128680;</div>
-          <h3 class="trust-title">Sistema de denuncias</h3>
-          <p class="trust-desc">Si algo no esta bien, denuncia desde la app. Revisamos cada caso.</p>
+          <h3 class="trust-title">Denuncias y bloqueo</h3>
+          <p class="trust-desc">Si algo no esta bien, denuncia y bloquea desde la app. Revisamos cada caso.</p>
         </div>
         <div class="trust-card reveal">
           <div class="trust-icon">&#128274;</div>
           <h3 class="trust-title">Datos protegidos</h3>
-          <p class="trust-desc">Tu informacion esta segura. Cumplimos con la Ley de Datos de Colombia.</p>
+          <p class="trust-desc">Tu informacion esta segura con controles de acceso por usuario. Cumplimos la Ley 1581 de Colombia.</p>
         </div>
       </div>
     </div>
