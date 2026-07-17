@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar tu cuenta — FixMaster</title>
+  <meta name="description" content="Como solicitar la eliminacion de tu cuenta de FixMaster y que datos se eliminan o se conservan.">
+  <meta name="theme-color" content="#0EA5E9">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230EA5E9'/%3E%3Cpath d='M18.5 4L10 18h5.5L13.5 28 22 14h-5.5z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #0EA5E9;
+      --dark: #1E293B;
+      --surface: #334155;
+      --bg: #F8FAFC;
+      --border: #E2E8F0;
+      --muted: #94A3B8;
+      --white: #FFFFFF;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 64px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo-icon { width: 32px; height: 32px; }
+    .logo-fix { color: var(--dark); }
+    .logo-master { color: var(--primary); }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .updated {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    p, li {
+      font-size: 15px;
+      color: var(--surface);
+      margin-bottom: 12px;
+    }
+    ul {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    li { margin-bottom: 8px; list-style: disc; }
+
+    .pasos {
+      counter-reset: paso;
+      padding-left: 0;
+      list-style: none;
+    }
+    .pasos li {
+      list-style: none;
+      counter-increment: paso;
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 14px;
+    }
+    .pasos li::before {
+      content: counter(paso);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .aviso {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+    .aviso p:last-child { margin-bottom: 0; }
+
+    footer {
+      background: var(--dark);
+      color: var(--muted);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+    footer a { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="38" height="38" rx="10" fill="#0EA5E9"/>
+          <path d="M21.5 6L11 21h7L15 32l13-15h-7z" fill="white"/>
+        </svg>
+        <span><span class="logo-fix">Fix</span><span class="logo-master">Master</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Eliminar tu cuenta</h1>
+    <p class="updated">Ultima actualizacion: julio 2026</p>
+
+    <p>
+      En FixMaster puedes pedir la eliminacion de tu cuenta y de tus datos personales
+      cuando quieras. Aqui te explicamos como hacerlo, que se elimina, que se conserva
+      y en cuanto tiempo, conforme a la <strong>Ley 1581 de 2012</strong> de Colombia.
+    </p>
+
+    <h2>Opcion 1: desde la app (recomendado)</h2>
+    <div class="card">
+      <ol class="pasos">
+        <li>Abre <strong>FixMaster</strong> e inicia sesion.</li>
+        <li>Ve a <strong>Ajustes</strong>.</li>
+        <li>Toca <strong>"Eliminar mi cuenta"</strong>.</li>
+        <li>Indica el motivo y confirma el envio de la solicitud.</li>
+      </ol>
+      <p>
+        Puedes <strong>cancelar</strong> la solicitud desde la app en cualquier momento
+        antes de que se cumpla el plazo.
+      </p>
+    </div>
+
+    <h2>Opcion 2: por correo (sin la app)</h2>
+    <div class="card">
+      <p>
+        Si ya desinstalaste la app o no puedes acceder a tu cuenta, escribenos a
+        <a href="mailto:fixmasterappp@gmail.com?subject=Eliminar%20mi%20cuenta%20FixMaster">fixmasterappp@gmail.com</a>
+        con el asunto <strong>"Eliminar mi cuenta"</strong>, desde el
+        <strong>mismo correo con el que te registraste</strong> (asi verificamos que
+        la cuenta es tuya).
+      </p>
+      <p>Responderemos a tu solicitud dentro de los <strong>15 dias habiles</strong> siguientes.</p>
+    </div>
+
+    <h2>Que datos se eliminan</h2>
+    <ul>
+      <li>Tu <strong>cuenta de acceso</strong> (correo y contrasena): no podras volver a iniciar sesion.</li>
+      <li>Tu <strong>perfil</strong>: nombre, telefono, correo y foto.</li>
+      <li>Tus <strong>direcciones</strong> guardadas, con sus indicaciones y ubicacion.</li>
+      <li>Tus <strong>notificaciones</strong>.</li>
+      <li>
+        Tus <strong>documentos de verificacion de identidad</strong>, incluidas las
+        fotos de tu cedula.
+      </li>
+      <li>Las <strong>fotos y videos</strong> que subiste al pedir un servicio.</li>
+      <li>Los <strong>recibos</strong> que guardaste en tu contabilidad.</li>
+      <li>Si eres profesional: tu ficha profesional y las <strong>categorias</strong> de tu oficio.</li>
+    </ul>
+    <p>
+      Los archivos se borran de nuestro almacenamiento, no solo de la base de datos.
+    </p>
+
+    <h2>Que se conserva, y por que</h2>
+    <p>
+      El <strong>historial de los servicios ya completados</strong> no se borra: se
+      <strong>anonimiza</strong> (por ejemplo, la direccion se reemplaza por "Direccion
+      eliminada"). Lo conservamos por dos razones:
+    </p>
+    <ul>
+      <li>
+        <strong>Para la otra parte:</strong> un servicio involucra a un cliente y a un
+        profesional. Borrarlo por completo destruiria el historial y la facturacion de
+        la otra persona, que tiene derecho a conservarlos.
+      </li>
+      <li>
+        <strong>Por obligaciones contables y legales</strong> aplicables a las facturas
+        de servicios prestados.
+      </li>
+    </ul>
+    <p>Esa informacion queda <strong>desvinculada de tu identidad</strong>.</p>
+
+    <h2>Cuanto tarda</h2>
+    <div class="aviso">
+      <p>
+        Tu solicitud pasa a <strong>revision</strong>. Si no se resuelve antes, tu cuenta
+        y tus datos personales se eliminan <strong>automaticamente a los 30 dias</strong>
+        de la solicitud. Puedes cancelarla desde la app antes de ese plazo.
+      </p>
+    </div>
+
+    <h2>Contacto</h2>
+    <p>
+      Dudas sobre tus datos o esta politica:
+      <a href="mailto:fixmasterappp@gmail.com">fixmasterappp@gmail.com</a> &middot;
+      <a href="privacidad.html">Politica de Privacidad</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 FixMaster. Todos los derechos reservados. &middot; <a href="index.html">Volver al inicio</a></p>
+  </footer>
+</body>
+</html>
