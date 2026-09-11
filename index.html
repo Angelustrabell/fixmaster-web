@@ -1,23 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FixMaster — Profesionales de confianza para tu hogar</title>
-  <meta name="description" content="Encuentra plomeros, electricistas, cerrajeros y m&aacute;s en Bogot&aacute;. Los profesionales compiten por ofrecerte el mejor precio. Descarga gratis.">
+
+  <!-- SEO: lo que Google muestra en los resultados.
+       Título hasta ~60 caracteres; descripción hasta ~155. -->
+  <title>Plomeros, electricistas y técnicos en Bogotá | FixMaster</title>
+  <meta name="description" content="Encuentra plomeros, electricistas, cerrajeros y más técnicos del hogar en Bogotá. Recibe propuestas, negocia el precio y elige. App gratis para Android.">
+  <link rel="canonical" href="https://fix-master.com.co/">
   <meta name="theme-color" content="#0EA5E9">
 
-  <link rel="canonical" href="https://fix-master.com.co/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="FixMaster — Profesionales de confianza">
-  <meta property="og:description" content="Servicios del hogar a domicilio en Bogot&aacute;. Publica lo que necesitas, recibe propuestas y elige al mejor profesional.">
+  <!-- Vista previa al compartir el enlace (WhatsApp, Facebook, X) -->
+  <meta property="og:site_name" content="FixMaster">
+  <meta property="og:title" content="FixMaster — Profesionales de confianza para tu hogar">
+  <meta property="og:description" content="Publica lo que necesitas, recibe propuestas de profesionales verificados en Bogotá, negocia el precio y elige. Gratis para Android.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fix-master.com.co/">
   <meta property="og:locale" content="es_CO">
+  <meta property="og:image" content="https://fix-master.com.co/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FixMaster: profesionales del hogar de confianza">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicon (inline SVG as data URI) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230EA5E9'/%3E%3Cpath d='M18.5 4L10 18h5.5L13.5 28 22 14h-5.5z' fill='white'/%3E%3C/svg%3E">
+  <!-- Íconos como archivo: Google no usa los que van incrustados en el HTML -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Datos estructurados: le explican a Google qué es FixMaster -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fix-master.com.co/#organizacion",
+        "name": "FixMaster",
+        "url": "https://fix-master.com.co/",
+        "logo": "https://fix-master.com.co/icon-512.png",
+        "email": "fixmasterappp@gmail.com",
+        "areaServed": { "@type": "City", "name": "Bogotá" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fix-master.com.co/#sitio",
+        "name": "FixMaster",
+        "url": "https://fix-master.com.co/",
+        "inLanguage": "es-CO",
+        "publisher": { "@id": "https://fix-master.com.co/#organizacion" }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://fix-master.com.co/#app",
+        "name": "FixMaster",
+        "operatingSystem": "Android",
+        "applicationCategory": "HomeApplication",
+        "description": "App para encontrar plomeros, electricistas, cerrajeros y otros profesionales del hogar en Bogotá: recibes propuestas, negocias el precio y eliges.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "COP" },
+        "publisher": { "@id": "https://fix-master.com.co/#organizacion" }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -701,10 +747,63 @@
       margin-top: 2px;
     }
 
+    /* ============ FAQ ============ */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0 24px;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 20px 0;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .faq-item[open] summary::after { content: '\2212'; }
+
+    .faq-item p {
+      font-size: 15px;
+      color: var(--surface);
+      line-height: 1.7;
+      padding-bottom: 20px;
+    }
+
+    .faq-item a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
     /* ============ CATEGORIES ============ */
+    /* 6 columnas: las 24 categorías quedan en 4 filas completas */
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 16px;
     }
 
@@ -1025,27 +1124,27 @@
   <nav id="navbar">
     <div class="container nav-inner">
       <a href="#" class="logo">
-        <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="38" height="38" rx="10" fill="#0EA5E9"/>
           <path d="M21.5 6L11 21h7L15 32l13-15h-7z" fill="white"/>
         </svg>
         <span><span class="logo-fix">Fix</span><span class="logo-master">Master</span></span>
       </a>
       <div class="nav-links">
-        <a href="#como-funciona">Como funciona</a>
+        <a href="#como-funciona">Cómo funciona</a>
         <a href="#funcionalidades">Funcionalidades</a>
         <a href="#profesionales">Profesionales</a>
         <a href="#categorias">Servicios</a>
         <a href="#descargar" class="btn btn-primary nav-cta">Descargar</a>
       </div>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#como-funciona" onclick="closeMenu()">Como funciona</a>
+      <a href="#como-funciona" onclick="closeMenu()">Cómo funciona</a>
       <a href="#funcionalidades" onclick="closeMenu()">Funcionalidades</a>
       <a href="#profesionales" onclick="closeMenu()">Profesionales</a>
       <a href="#categorias" onclick="closeMenu()">Servicios</a>
@@ -1060,26 +1159,26 @@
         <div class="hero-content">
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
-            Disponible en Bogota
+            Disponible en Bogotá
           </div>
           <h1>
-            El profesional que necesitas,<br>
+            El profesional que tu hogar necesita,<br>
             <span class="accent">al precio justo</span>
           </h1>
           <p class="hero-desc">
-            Publica lo que necesitas en tu hogar, recibe propuestas de profesionales verificados, negocia tu precio y elige al que mas te convenga. Todo desde tu celular.
+            Plomeros, electricistas, cerrajeros y más en Bogotá. Publica lo que necesitas, recibe propuestas de profesionales verificados, negocia el precio y elige. Todo desde tu celular.
           </p>
           <div class="hero-buttons">
             <a href="#descargar" class="btn btn-primary btn-lg">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Descargar gratis
             </a>
-            <a href="#como-funciona" class="btn btn-outline btn-lg">Ver como funciona</a>
+            <a href="#como-funciona" class="btn btn-outline btn-lg">Ver cómo funciona</a>
           </div>
           <div class="hero-stats">
             <div>
-              <div class="hero-stat-num">20</div>
-              <div class="hero-stat-label">Categorias de servicio</div>
+              <div class="hero-stat-num">24</div>
+              <div class="hero-stat-label">Categorías de servicio</div>
             </div>
             <div>
               <div class="hero-stat-num">100%</div>
@@ -1092,7 +1191,7 @@
           </div>
         </div>
 
-        <div class="hero-visual">
+        <div class="hero-visual" aria-hidden="true">
           <div class="phone-mockup">
             <div class="phone-notch"></div>
             <div class="phone-screen">
@@ -1106,14 +1205,14 @@
                   Buscar servicio...
                 </div>
                 <div class="phone-grid">
-                  <div class="phone-cat"><div class="phone-cat-icon">&#128295;</div>Plomeria</div>
+                  <div class="phone-cat"><div class="phone-cat-icon">&#128295;</div>Plomería</div>
                   <div class="phone-cat"><div class="phone-cat-icon">&#9889;</div>Electricidad</div>
-                  <div class="phone-cat"><div class="phone-cat-icon">&#128273;</div>Cerrajeria</div>
+                  <div class="phone-cat"><div class="phone-cat-icon">&#128273;</div>Cerrajería</div>
                   <div class="phone-cat"><div class="phone-cat-icon">&#127912;</div>Pintura</div>
                   <div class="phone-cat"><div class="phone-cat-icon">&#10052;&#65039;</div>Aire acond.</div>
                   <div class="phone-cat"><div class="phone-cat-icon">&#128736;</div>Reformas</div>
-                  <div class="phone-cat"><div class="phone-cat-icon">&#129702;</div>Vidrios</div>
-                  <div class="phone-cat"><div class="phone-cat-icon">&#127807;</div>Jardineria</div>
+                  <div class="phone-cat"><div class="phone-cat-icon">&#129695;</div>Vidrios</div>
+                  <div class="phone-cat"><div class="phone-cat-icon">&#127807;</div>Jardinería</div>
                   <div class="phone-cat"><div class="phone-cat-icon">&#128666;</div>Trasteos</div>
                 </div>
               </div>
@@ -1140,38 +1239,38 @@
   <section class="how-it-works" id="como-funciona">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Como funciona</span>
+        <span class="section-label">Cómo funciona</span>
         <h2 class="section-title">Tu servicio en 5 pasos</h2>
-        <p class="section-subtitle">Sin llamadas, sin buscar numeros. Del problema a la solucion, desde tu celular.</p>
+        <p class="section-subtitle">Sin llamadas ni buscar números. Del problema a la solución, desde tu celular.</p>
       </div>
       <div class="steps-grid">
         <div class="step-card reveal">
           <div class="step-number">1</div>
-          <div class="step-icon">&#128247;</div>
+          <div class="step-icon" aria-hidden="true">&#128247;</div>
           <h3 class="step-title">Publica</h3>
-          <p class="step-desc">Elige la categoria, describe el problema, sube foto o video y fija tu direccion en el mapa.</p>
+          <p class="step-desc">Elige la categoría, describe el problema, sube foto o video y fija tu dirección en el mapa.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">2</div>
-          <div class="step-icon">&#128178;</div>
+          <div class="step-icon" aria-hidden="true">&#128178;</div>
           <h3 class="step-title">Recibe propuestas</h3>
-          <p class="step-desc">Profesionales cercanos te envian su precio, calificacion y tiempo estimado en tiempo real.</p>
+          <p class="step-desc">Profesionales cercanos te envían su precio, calificación y tiempo estimado, en tiempo real.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">3</div>
-          <div class="step-icon">&#129309;</div>
+          <div class="step-icon" aria-hidden="true">&#129309;</div>
           <h3 class="step-title">Compara y negocia</h3>
-          <p class="step-desc">Elige la que prefieras o contraoferta tu precio. El profesional acepta, negocia o declina.</p>
+          <p class="step-desc">Elige la que prefieras o haz una contraoferta. El profesional la acepta, te propone otro precio o declina.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">4</div>
-          <div class="step-icon">&#128205;</div>
+          <div class="step-icon" aria-hidden="true">&#128205;</div>
           <h3 class="step-title">Sigue en vivo</h3>
           <p class="step-desc">Ve al profesional en camino con GPS, chatea y recibe avisos de cada cambio de estado.</p>
         </div>
         <div class="step-card reveal">
           <div class="step-number">5</div>
-          <div class="step-icon">&#9989;</div>
+          <div class="step-icon" aria-hidden="true">&#9989;</div>
           <h3 class="step-title">Paga y califica</h3>
           <p class="step-desc">Paga directo al profesional, recibe tu factura y califica. El servicio queda en tu historial.</p>
         </div>
@@ -1185,51 +1284,51 @@
       <div class="section-header reveal">
         <span class="section-label">Funcionalidades</span>
         <h2 class="section-title">Todo lo que necesitas, en una app</h2>
-        <p class="section-subtitle">Disenada para que contrates con confianza y el profesional trabaje tranquilo.</p>
+        <p class="section-subtitle">Diseñada para que contrates con confianza y el profesional trabaje tranquilo.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
-          <div class="feature-icon">&#128176;</div>
-          <h3 class="feature-title">Subasta con negociacion</h3>
-          <p class="feature-desc">Los profesionales compiten con su precio. Tu comparas, contraofertas y elegis. Precios justos por competencia real.</p>
+          <div class="feature-icon" aria-hidden="true">&#128176;</div>
+          <h3 class="feature-title">Subasta con negociación</h3>
+          <p class="feature-desc">Los profesionales compiten con su precio. Tú comparas, haces contraofertas y eliges. Precios justos por competencia real.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#128205;</div>
+          <div class="feature-icon" aria-hidden="true">&#128205;</div>
           <h3 class="feature-title">Seguimiento GPS en vivo</h3>
-          <p class="feature-desc">Ve al profesional en camino con ubicacion en tiempo real. Navega con Waze o Google Maps.</p>
+          <p class="feature-desc">Ve al profesional en camino con su ubicación en tiempo real y recibe un aviso cuando llegue.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#128172;</div>
+          <div class="feature-icon" aria-hidden="true">&#128172;</div>
           <h3 class="feature-title">Chat en tiempo real</h3>
-          <p class="feature-desc">Comunicate directo con tu profesional. Indicador de "en linea", "escribiendo" e historial archivado.</p>
+          <p class="feature-desc">Comunícate directo con el profesional, con indicadores de "en línea" y "escribiendo". Los acuerdos quedan por escrito.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#128737;&#65039;</div>
+          <div class="feature-icon" aria-hidden="true">&#128737;&#65039;</div>
           <h3 class="feature-title">Profesionales verificados</h3>
-          <p class="feature-desc">Verificacion de identidad con cedula y selfie. Los verificados llevan el sello &#10004; visible.</p>
+          <p class="feature-desc">Antes de tomar trabajos, cada profesional verifica su identidad con cédula y selfie. Los verificados llevan el sello &#10004;.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#11088;</div>
+          <div class="feature-icon" aria-hidden="true">&#11088;</div>
           <h3 class="feature-title">Calificaciones reales</h3>
           <p class="feature-desc">Ambas partes califican al terminar. Solo de servicios reales completados en la app.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#129534;</div>
-          <h3 class="feature-title">Factura automatica</h3>
-          <p class="feature-desc">Al completar el servicio se genera la factura con precio acordado, metodo de pago y datos del profesional.</p>
+          <div class="feature-icon" aria-hidden="true">&#129534;</div>
+          <h3 class="feature-title">Factura automática</h3>
+          <p class="feature-desc">Al completar el servicio se genera la factura con el valor, el método de pago y los datos del profesional.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#127968;</div>
-          <h3 class="feature-title">Expediente del hogar</h3>
-          <p class="feature-desc">Cada reparacion queda guardada: fecha, costo, fotos y quien la hizo. Tu hogar tiene memoria.</p>
+          <div class="feature-icon" aria-hidden="true">&#127968;</div>
+          <h3 class="feature-title">Contabilidad del hogar</h3>
+          <p class="feature-desc">Tu hogar tiene memoria: cada servicio queda registrado. Suma gastos con foto del recibo, ponte un presupuesto y exporta a PDF o Excel.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#128188;</div>
-          <h3 class="feature-title">Hoja de vida del oficio</h3>
-          <p class="feature-desc">Para profesionales: un historial verificable de ingresos y trabajos. Util para credito o renta.</p>
+          <div class="feature-icon" aria-hidden="true">&#128188;</div>
+          <h3 class="feature-title">Contabilidad del profesional</h3>
+          <p class="feature-desc">Tus trabajos e ingresos quedan registrados. Suma tus gastos y mira tu ganancia real por trabajo.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon">&#128260;</div>
+          <div class="feature-icon" aria-hidden="true">&#128260;</div>
           <h3 class="feature-title">Una app, dos roles</h3>
           <p class="feature-desc">Cliente y profesional con la misma cuenta. Cambia de rol desde tu perfil en un toque.</p>
         </div>
@@ -1245,49 +1344,49 @@
           <span class="section-label">Para profesionales</span>
           <h2 class="section-title">Gana dinero con tu oficio</h2>
           <p class="section-subtitle">
-            Recibe solicitudes de clientes en tu zona, propone tu precio y trabaja en tus propios terminos. Los primeros 3 servicios son gratis.
+            Recibe solicitudes de clientes en tu zona, propón tu precio y trabaja a tu manera. Empieza gratis y sin comisiones.
           </p>
           <div class="pro-benefits">
             <div class="pro-benefit">
-              <div class="pro-benefit-icon">&#128178;</div>
+              <div class="pro-benefit-icon" aria-hidden="true">&#128178;</div>
               <div>
-                <div class="pro-benefit-title">Tu pones el precio</div>
-                <div class="pro-benefit-desc">Nada de tarifas fijas. Propone el precio que consideres justo.</div>
+                <div class="pro-benefit-title">Tú pones el precio</div>
+                <div class="pro-benefit-desc">Nada de tarifas fijas. Propón el precio que consideres justo.</div>
               </div>
             </div>
             <div class="pro-benefit">
-              <div class="pro-benefit-icon">&#128241;</div>
+              <div class="pro-benefit-icon" aria-hidden="true">&#128241;</div>
               <div>
                 <div class="pro-benefit-title">Clientes en tu celular</div>
-                <div class="pro-benefit-desc">Las solicitudes llegan directo a tu telefono, de tu categoria y zona.</div>
+                <div class="pro-benefit-desc">Las solicitudes de tu oficio y de tu zona llegan directo a tu teléfono.</div>
               </div>
             </div>
             <div class="pro-benefit">
-              <div class="pro-benefit-icon">&#128640;</div>
+              <div class="pro-benefit-icon" aria-hidden="true">&#128640;</div>
               <div>
-                <div class="pro-benefit-title">3 servicios gratis para empezar</div>
-                <div class="pro-benefit-desc">Prueba sin compromiso. Solo pagas suscripcion cuando ya estes generando ingresos.</div>
+                <div class="pro-benefit-title">Empieza gratis</div>
+                <div class="pro-benefit-desc">Sin comisiones: lo que cobras por tu trabajo es tuyo.</div>
               </div>
             </div>
             <div class="pro-benefit">
-              <div class="pro-benefit-icon">&#128203;</div>
+              <div class="pro-benefit-icon" aria-hidden="true">&#128203;</div>
               <div>
-                <div class="pro-benefit-title">Hoja de vida verificable</div>
-                <div class="pro-benefit-desc">Cada servicio suma a tu historial de ingresos y trabajos. Sirve para credito o declaracion de renta.</div>
+                <div class="pro-benefit-title">Hoja de vida de tu oficio</div>
+                <div class="pro-benefit-desc">Cada servicio completado queda en tu historial de trabajos, ingresos y calificaciones.</div>
               </div>
             </div>
             <div class="pro-benefit">
-              <div class="pro-benefit-icon">&#128663;</div>
+              <div class="pro-benefit-icon" aria-hidden="true">&#128663;</div>
               <div>
-                <div class="pro-benefit-title">Navegacion integrada</div>
-                <div class="pro-benefit-desc">Llega a la direccion del cliente con Waze o Google Maps directo desde la app.</div>
+                <div class="pro-benefit-title">Navegación integrada</div>
+                <div class="pro-benefit-desc">Llega a la dirección del cliente con Waze o Google Maps, directo desde la app.</div>
               </div>
             </div>
             <div class="pro-benefit">
-              <div class="pro-benefit-icon">&#127873;</div>
+              <div class="pro-benefit-icon" aria-hidden="true">&#128202;</div>
               <div>
-                <div class="pro-benefit-title">Programa de referidos</div>
-                <div class="pro-benefit-desc">Invita a otros profesionales y gana dias de suscripcion y visibilidad prioritaria.</div>
+                <div class="pro-benefit-title">Tu contabilidad</div>
+                <div class="pro-benefit-desc">Registra tus gastos (materiales, transporte, herramientas) y mira tu ganancia real por trabajo.</div>
               </div>
             </div>
           </div>
@@ -1298,31 +1397,31 @@
 
         <div class="pro-visual reveal">
           <div class="pro-stat-card">
-            <div class="pro-stat-icon">&#128736;</div>
+            <div class="pro-stat-icon" aria-hidden="true">&#128736;</div>
             <div>
-              <div class="pro-stat-value">20 categorias</div>
-              <div class="pro-stat-label">De plomeria a jardineria, tu especialidad esta aqui</div>
+              <div class="pro-stat-value">24 categorías</div>
+              <div class="pro-stat-label">De la plomería a la barbería: tu oficio está aquí</div>
             </div>
           </div>
           <div class="pro-stat-card">
-            <div class="pro-stat-icon">&#128176;</div>
+            <div class="pro-stat-icon" aria-hidden="true">&#128176;</div>
             <div>
               <div class="pro-stat-value">$0 para empezar</div>
-              <div class="pro-stat-label">Tus primeros 3 servicios son completamente gratis</div>
+              <div class="pro-stat-label">Sin comisiones por los trabajos que tomes</div>
             </div>
           </div>
           <div class="pro-stat-card">
-            <div class="pro-stat-icon">&#128274;</div>
+            <div class="pro-stat-icon" aria-hidden="true">&#128274;</div>
             <div>
               <div class="pro-stat-value">Cobro directo</div>
               <div class="pro-stat-label">El cliente te paga a ti, en efectivo o transferencia</div>
             </div>
           </div>
           <div class="pro-stat-card">
-            <div class="pro-stat-icon">&#11088;</div>
+            <div class="pro-stat-icon" aria-hidden="true">&#11088;</div>
             <div>
-              <div class="pro-stat-value">Tu reputacion crece</div>
-              <div class="pro-stat-label">Cada servicio bien hecho te sube en el ranking</div>
+              <div class="pro-stat-value">Tu reputación crece</div>
+              <div class="pro-stat-label">Cada servicio bien hecho suma calificaciones que ven los clientes</div>
             </div>
           </div>
         </div>
@@ -1334,32 +1433,36 @@
   <section id="categorias">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Servicios</span>
-        <h2 class="section-title">20 categorias para tu hogar</h2>
-        <p class="section-subtitle">Todo lo que tu casa necesita, en un solo lugar.</p>
+        <span class="section-label">Categorías</span>
+        <h2 class="section-title">Servicios a domicilio en Bogotá</h2>
+        <p class="section-subtitle">24 categorías para tu hogar y tu día a día, en un solo lugar.</p>
       </div>
-      <div class="categories-grid reveal">
-        <div class="cat-item"><div class="cat-icon">&#128295;</div><div class="cat-name">Plomeria</div></div>
-        <div class="cat-item"><div class="cat-icon">&#9889;</div><div class="cat-name">Electricidad</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128293;</div><div class="cat-name">Gas</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128273;</div><div class="cat-name">Cerrajeria</div></div>
-        <div class="cat-item"><div class="cat-icon">&#127912;</div><div class="cat-name">Pintura</div></div>
-        <div class="cat-item"><div class="cat-icon">&#10052;&#65039;</div><div class="cat-name">Aire acondicionado</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128027;</div><div class="cat-name">Fumigacion</div></div>
-        <div class="cat-item"><div class="cat-icon">&#127760;</div><div class="cat-name">Redes</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128736;</div><div class="cat-name">Reformas</div></div>
-        <div class="cat-item"><div class="cat-icon">&#129702;</div><div class="cat-name">Vidrios</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128682;</div><div class="cat-name">Puertas</div></div>
-        <div class="cat-item"><div class="cat-icon">&#129529;</div><div class="cat-name">Limpieza</div></div>
-        <div class="cat-item"><div class="cat-icon">&#127807;</div><div class="cat-name">Jardineria</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128666;</div><div class="cat-name">Trasteos</div></div>
-        <div class="cat-item"><div class="cat-icon">&#129717;</div><div class="cat-name">Carpinteria</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128296;</div><div class="cat-name">Mantenimiento</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128225;</div><div class="cat-name">Antenas y TV</div></div>
-        <div class="cat-item"><div class="cat-icon">&#127946;</div><div class="cat-name">Piscinas</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128167;</div><div class="cat-name">Impermeabilizacion</div></div>
-        <div class="cat-item"><div class="cat-icon">&#128054;</div><div class="cat-name">Mascotas</div></div>
-      </div>
+      <ul class="categories-grid reveal">
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128295;</div><div class="cat-name">Plomería</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#9889;</div><div class="cat-name">Electricidad</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128293;</div><div class="cat-name">Gas</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128273;</div><div class="cat-name">Cerrajería</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#127912;</div><div class="cat-name">Pintura</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#10052;&#65039;</div><div class="cat-name">Aire acondicionado</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128027;</div><div class="cat-name">Fumigación</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#127760;</div><div class="cat-name">Redes</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128736;</div><div class="cat-name">Reformas</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#129695;</div><div class="cat-name">Vidrios y ventanas</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128682;</div><div class="cat-name">Puertas y portones</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#129529;</div><div class="cat-name">Limpieza del hogar</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#127807;</div><div class="cat-name">Jardinería</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128666;</div><div class="cat-name">Trasteos</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#129717;</div><div class="cat-name">Carpintería</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128296;</div><div class="cat-name">Mantenimiento general</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128225;</div><div class="cat-name">Antenas y TV</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#127946;</div><div class="cat-name">Piscinas</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128167;</div><div class="cat-name">Impermeabilización</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128054;</div><div class="cat-name">Cuidado de mascotas</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128136;</div><div class="cat-name">Barbería</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128135;</div><div class="cat-name">Peluquería y estilismo</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128133;</div><div class="cat-name">Manicure y pedicure</div></li>
+        <li class="cat-item"><div class="cat-icon" aria-hidden="true">&#128757;</div><div class="cat-name">Domicilios y mensajería</div></li>
+      </ul>
     </div>
   </section>
 
@@ -1372,35 +1475,75 @@
       </div>
       <div class="trust-grid">
         <div class="trust-card reveal">
-          <div class="trust-icon">&#128737;&#65039;</div>
+          <div class="trust-icon" aria-hidden="true">&#128737;&#65039;</div>
           <h3 class="trust-title">Identidad verificada</h3>
-          <p class="trust-desc">Los profesionales pueden verificar su identidad con cedula y selfie. Los verificados llevan sello &#10004; visible.</p>
+          <p class="trust-desc">Los profesionales verifican su identidad con cédula y selfie antes de tomar trabajos. Los verificados llevan un sello &#10004; visible.</p>
         </div>
         <div class="trust-card reveal">
-          <div class="trust-icon">&#128176;</div>
+          <div class="trust-icon" aria-hidden="true">&#128176;</div>
           <h3 class="trust-title">Precio acordado</h3>
-          <p class="trust-desc">El precio queda registrado antes de empezar. Sin sorpresas ni cobros de mas al terminar.</p>
+          <p class="trust-desc">El precio se negocia y queda registrado en la app antes de empezar. La factura muestra el valor final.</p>
         </div>
         <div class="trust-card reveal">
-          <div class="trust-icon">&#11088;</div>
+          <div class="trust-icon" aria-hidden="true">&#11088;</div>
           <h3 class="trust-title">Calificaciones reales</h3>
-          <p class="trust-desc">Solo de servicios completados en la app. Nada de resenas falsas ni autocalificaciones.</p>
+          <p class="trust-desc">Solo de servicios completados en la app. Nada de reseñas falsas ni autocalificaciones.</p>
         </div>
         <div class="trust-card reveal">
-          <div class="trust-icon">&#128737;</div>
-          <h3 class="trust-title">Anti-fraude</h3>
-          <p class="trust-desc">No puedes tomar tus propias solicitudes ni autocalificarte. Los precios de las ofertas no se alteran.</p>
+          <div class="trust-icon" aria-hidden="true">&#128737;</div>
+          <h3 class="trust-title">Antifraude</h3>
+          <p class="trust-desc">No puedes tomar tus propias solicitudes ni autocalificarte. El precio de una oferta no se puede alterar.</p>
         </div>
         <div class="trust-card reveal">
-          <div class="trust-icon">&#128680;</div>
+          <div class="trust-icon" aria-hidden="true">&#128680;</div>
           <h3 class="trust-title">Denuncias y bloqueo</h3>
-          <p class="trust-desc">Si algo no esta bien, denuncia y bloquea desde la app. Revisamos cada caso.</p>
+          <p class="trust-desc">Si algo no está bien, denuncia y bloquea al usuario desde la app. Revisamos las denuncias.</p>
         </div>
         <div class="trust-card reveal">
-          <div class="trust-icon">&#128274;</div>
+          <div class="trust-icon" aria-hidden="true">&#128274;</div>
           <h3 class="trust-title">Datos protegidos</h3>
-          <p class="trust-desc">Tu informacion esta segura con controles de acceso por usuario. Cumplimos la Ley 1581 de Colombia.</p>
+          <p class="trust-desc">Tu información se protege con controles de acceso por usuario, conforme a la Ley 1581 de Colombia.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section id="preguntas">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Preguntas frecuentes</span>
+        <h2 class="section-title">Lo que más nos preguntan</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>¿Cuánto cuesta usar FixMaster?</summary>
+          <p>Descargar y usar la app es gratis. El precio de cada servicio lo acuerdas directamente con el profesional antes de empezar. Para los profesionales, empezar también es gratis y sin comisiones.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo se paga el servicio?</summary>
+          <p>Directamente al profesional, en efectivo o por transferencia. FixMaster no procesa pagos ni te pide datos de tarjetas: solo registra el valor y el método de pago en la factura.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Los profesionales están verificados?</summary>
+          <p>Sí. Para poder tomar trabajos, cada profesional sube fotos de su cédula y una selfie, y pasa una revisión manual. Los verificados llevan un sello visible.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿En qué ciudades funciona?</summary>
+          <p>Estamos empezando en Bogotá. Las solicitudes les llegan a los profesionales cercanos, así que en otras ciudades todavía puede haber pocos disponibles.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Hay app para iPhone?</summary>
+          <p>Por ahora FixMaster solo está disponible para Android.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo me registro como profesional?</summary>
+          <p>Descarga la app, crea tu cuenta y activa el "Modo profesional" desde tu perfil. Eliges tus oficios y verificas tu identidad para poder enviar propuestas.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo elimino mi cuenta?</summary>
+          <p>Desde la app, en Ajustes &rarr; "Eliminar mi cuenta". Si ya no tienes la app, sigue los pasos de <a href="eliminar-cuenta.html">esta página</a>.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -1411,7 +1554,7 @@
       <div class="reveal">
         <h2 class="section-title">Descarga FixMaster gratis</h2>
         <p class="cta-desc">
-          Disponible para Android. Registrate en segundos y empieza a recibir propuestas de profesionales verificados en Bogota.
+          Disponible para Android. Regístrate en segundos y empieza a recibir propuestas de profesionales verificados en Bogotá.
         </p>
         <div class="cta-buttons">
           <a href="https://github.com/Angelustrabell/prontotek-releases/releases/latest" target="_blank" rel="noopener" class="btn btn-white btn-lg">
@@ -1433,43 +1576,45 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo">
-            <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+            <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32" aria-hidden="true">
               <rect width="38" height="38" rx="10" fill="#0EA5E9"/>
               <path d="M21.5 6L11 21h7L15 32l13-15h-7z" fill="white"/>
             </svg>
             <span><span class="logo-fix">Fix</span><span class="logo-master">Master</span></span>
           </div>
           <p class="footer-desc">
-            Conectamos hogares con profesionales de confianza en Bogota, Colombia. Tu precio justo, tu profesional elegido.
+            Conectamos hogares con profesionales de confianza en Bogotá, Colombia. Tu precio justo, tu profesional elegido.
           </p>
         </div>
 
         <div class="footer-col">
           <h4>Producto</h4>
-          <a href="#como-funciona">Como funciona</a>
+          <a href="#como-funciona">Cómo funciona</a>
           <a href="#funcionalidades">Funcionalidades</a>
           <a href="#categorias">Servicios</a>
+          <a href="#preguntas">Preguntas frecuentes</a>
           <a href="#descargar">Descargar</a>
         </div>
 
         <div class="footer-col">
           <h4>Profesionales</h4>
-          <a href="#profesionales">Unete</a>
+          <a href="#profesionales">Únete</a>
           <a href="#profesionales">Beneficios</a>
-          <a href="#descargar">Registrate</a>
+          <a href="#descargar">Regístrate</a>
         </div>
 
         <div class="footer-col">
           <h4>Legal</h4>
-          <a href="privacidad.html">Politica de privacidad</a>
-          <a href="terminos.html">Terminos y condiciones</a>
+          <a href="privacidad.html">Política de privacidad</a>
+          <a href="terminos.html">Términos y condiciones</a>
+          <a href="eliminar-cuenta.html">Eliminar cuenta</a>
           <a href="mailto:fixmasterappp@gmail.com">Contacto</a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <span>&copy; 2026 FixMaster. Todos los derechos reservados.</span>
-        <span>Hecho con &#9889; en Bogota, Colombia</span>
+        <span>Hecho con &#9889; en Bogotá, Colombia</span>
       </div>
     </div>
   </footer>

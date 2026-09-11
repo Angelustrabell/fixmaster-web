@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fix-master.com.co/sitemap.xml
