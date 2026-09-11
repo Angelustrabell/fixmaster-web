@@ -223,6 +223,112 @@
       color: var(--muted);
     }
     footer a { color: var(--primary); }
+
+    /* ── Correo confirmado, repetido en cada paso ── */
+    .paso-cuenta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2px 8px;
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .paso-cuenta[hidden] { display: none; }
+    .paso-cuenta strong { overflow-wrap: anywhere; }
+    .cambiar-correo {
+      border: none;
+      background: none;
+      padding: 0;
+      font: inherit;
+      font-weight: 600;
+      color: var(--primary-dark);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* ── Ventana emergente: mismo correo en el navegador y en la Play Store ── */
+    .modal {
+      width: min(440px, calc(100% - 24px));
+      max-width: none;
+      max-height: calc(100% - 24px);
+      margin: 12px auto auto; /* arriba en el celular: el teclado no tapa el campo */
+      border: none;
+      border-radius: 20px;
+      padding: 24px 20px 20px;
+      background: var(--white);
+      color: var(--dark);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, .35);
+      overflow-y: auto;
+    }
+    .modal::backdrop { background: rgba(15, 23, 42, .6); }
+    .modal:focus { outline: none; } /* al abrirse el foco va a la ventana, no a la X */
+    .modal-cerrar:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+    @media (min-width: 600px) { .modal { margin: auto; } }
+    .modal-cerrar {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: transparent;
+      font-size: 26px;
+      line-height: 1;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .modal-alerta {
+      display: inline-block;
+      background: #FEF3C7;
+      color: #92400E;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+    .modal h2 { font-size: 21px; margin-bottom: 8px; padding-right: 24px; }
+    .modal-texto { font-size: 15px; color: var(--surface); margin-bottom: 12px; }
+    .modal-texto strong { color: var(--dark); }
+    .igual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bg);
+      border: 2px dashed #BAE6FD;
+      border-radius: 14px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .igual-fila { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 0 8px; }
+    .igual-etiqueta { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .igual-correo { font-size: 16px; font-weight: 700; overflow-wrap: anywhere; }
+    .igual-signo { font-size: 22px; font-weight: 800; color: var(--primary); line-height: 1.3; }
+    .campo-etiqueta { display: block; font-size: 15px; font-weight: 700; }
+    .campo-ayuda { font-size: 13px; color: var(--surface); margin-bottom: 8px; }
+    .campo {
+      width: 100%;
+      min-height: 52px;
+      padding: 12px 14px;
+      font: inherit;
+      font-size: 16px; /* 16px o más: el celular no hace zoom al escribir */
+      color: var(--dark);
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+    }
+    .campo:focus { outline: none; border-color: var(--primary); }
+    .campo[aria-invalid="true"] { border-color: #DC2626; }
+    .campo-error { min-height: 20px; margin: 6px 0 8px; font-size: 13px; font-weight: 600; color: #DC2626; }
+    .modal .boton { width: 100%; border: none; font-family: inherit; cursor: pointer; }
+    .modal-pie { margin-top: 10px; font-size: 13px; color: var(--muted); text-align: center; }
+    .modal-pie a { color: var(--primary); font-weight: 600; }
   </style>
 </head>
 <body>
@@ -255,18 +361,23 @@
         <ol class="pasos">
           <li class="paso">
             <div class="paso-cabecera"><span class="paso-num">1</span><span class="paso-titulo">Entra al grupo de fundadores</span></div>
-            <p class="paso-nota">Con la misma cuenta de Gmail que usas en la Play Store de tu celular.</p>
-            <!-- Enlace del Google Group: cambiarlo si el grupo se crea con otro nombre -->
-            <a class="boton" href="https://groups.google.com/g/fixmaster-testers" target="_blank" rel="noopener">Unirme al grupo</a>
+            <p class="paso-nota">Con la misma cuenta de Gmail que usas en la Play Store de tu celular. Toca <strong>Unirse al grupo</strong>, junto al nombre FixMaster Testers. Si no ves ese botón, toca <strong>Acceder</strong> (arriba a la derecha) y entra con tu Gmail.</p>
+            <p class="paso-cuenta" hidden>Tu cuenta: <strong></strong> <button type="button" class="cambiar-correo">Cambiar</button></p>
+            <!-- Google Group fixmaster-testers@googlegroups.com (lista de testers de la prueba cerrada en Play Console).
+                 Enlaza a /about: la portada del grupo les dice "No tienes permiso para acceder a este contenido" a quienes
+                 aún no son miembros (las conversaciones son solo para miembros); la página de información no. -->
+            <a class="boton" href="https://groups.google.com/g/fixmaster-testers/about" target="_blank" rel="noopener">Unirme al grupo</a>
           </li>
           <li class="paso">
             <div class="paso-cabecera"><span class="paso-num">2</span><span class="paso-titulo">Acepta la prueba de FixMaster</span></div>
             <p class="paso-nota">Se abre Google Play: toca el botón para unirte como tester.</p>
+            <p class="paso-cuenta" hidden>Tu cuenta: <strong></strong> <button type="button" class="cambiar-correo">Cambiar</button></p>
             <a class="boton" href="https://play.google.com/apps/testing/com.fixmaster.app" target="_blank" rel="noopener">Aceptar la prueba</a>
           </li>
           <li class="paso">
             <div class="paso-cabecera"><span class="paso-num">3</span><span class="paso-titulo">Instala la app</span></div>
             <p class="paso-nota">Si todavía no te deja instalarla, espera unos minutos y vuelve a intentar. Luego crea tu cuenta y activa el <strong>Modo profesional</strong> desde tu perfil.</p>
+            <p class="paso-cuenta" hidden>Tu cuenta: <strong></strong> <button type="button" class="cambiar-correo">Cambiar</button></p>
             <a class="boton" href="https://play.google.com/store/apps/details?id=com.fixmaster.app" target="_blank" rel="noopener">Abrir en Play Store</a>
           </li>
         </ol>
@@ -347,5 +458,134 @@
   <footer>
     <p>&copy; 2026 FixMaster &middot; <a href="index.html">Inicio</a> &middot; <a href="terminos.html">Términos</a> &middot; <a href="privacidad.html">Privacidad</a></p>
   </footer>
+
+  <!-- ====== VENTANA EMERGENTE: mismo correo de Gmail en el navegador y en la Play Store ====== -->
+  <dialog class="modal" id="avisoCorreo" aria-labelledby="avisoCorreoTitulo" tabindex="-1">
+    <button type="button" class="modal-cerrar" id="avisoCorreoCerrar" aria-label="Cerrar">&times;</button>
+    <span class="modal-alerta">&#9888;&#65039; Importante antes de empezar</span>
+    <h2 id="avisoCorreoTitulo">Usa el mismo correo</h2>
+    <p class="modal-texto">Tu correo en este <strong>navegador</strong> debe ser el <strong>mismo</strong> de la <strong>Play Store</strong> de tu celular. Si no, Google no te dejará instalar la app.</p>
+    <div class="igual" aria-hidden="true">
+      <div class="igual-fila"><span class="igual-etiqueta">Navegador</span> <span class="igual-correo" data-correo>tucorreo@gmail.com</span></div>
+      <span class="igual-signo">=</span>
+      <div class="igual-fila"><span class="igual-etiqueta">Play Store</span> <span class="igual-correo" data-correo>tucorreo@gmail.com</span></div>
+    </div>
+    <form id="avisoCorreoForm" novalidate>
+      <label class="campo-etiqueta" for="correoPlay">¿Cuál es tu correo de la Play Store?</label>
+      <p class="campo-ayuda" id="correoPlayAyuda">Lo ves en la Play Store tocando tu foto (arriba).</p>
+      <input class="campo" id="correoPlay" name="correo" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" enterkeyhint="go" placeholder="tucorreo@gmail.com" aria-describedby="correoPlayAyuda correoPlayError">
+      <p class="campo-error" id="correoPlayError" aria-live="polite"></p>
+      <button type="submit" class="boton">Confirmar y seguir</button>
+    </form>
+    <p class="modal-pie">Tu correo no se envía a ningún lado. ¿Tu cuenta de Google no es @gmail.com? <a href="https://wa.me/573018978892?text=Hola%20Cris%2C%20quiero%20ser%20t%C3%A9cnico%20fundador%20y%20mi%20cuenta%20de%20Google%20no%20es%20%40gmail.com" target="_blank" rel="noopener">Escríbeme por WhatsApp</a></p>
+  </dialog>
+
+  <script>
+    // Ventana emergente de los 3 pasos: el técnico confirma su correo de la Play Store
+    // (solo @gmail.com) y se le repite en cada paso. El correo no sale del celular:
+    // queda en sessionStorage mientras la pestaña esté abierta.
+    (function () {
+      var modal = document.getElementById('avisoCorreo');
+      if (!modal || typeof modal.showModal !== 'function') return; // navegador sin <dialog>: los pasos siguen funcionando
+
+      var CLAVE = 'fixmaster-correo-play';
+      var EJEMPLO = 'tucorreo@gmail.com';
+      var form = document.getElementById('avisoCorreoForm');
+      var campo = document.getElementById('correoPlay');
+      var error = document.getElementById('correoPlayError');
+      var vistas = modal.querySelectorAll('[data-correo]');
+      var recordatorios = document.querySelectorAll('.paso-cuenta');
+      var destino = null; // botón de paso que se tocó antes de confirmar el correo
+      var correo = null;
+      try { correo = sessionStorage.getItem(CLAVE); } catch (e) {}
+
+      // Usuario de Gmail: letras, números y puntos (sin punto al inicio, al final ni dos seguidos).
+      function esGmail(texto) {
+        return /^[a-z0-9](?:[a-z0-9.]*[a-z0-9])?@gmail\.com$/.test(texto) && texto.indexOf('..') === -1;
+      }
+      function limpio() {
+        return campo.value.trim().toLowerCase();
+      }
+      function pintarCorreo(texto) {
+        for (var i = 0; i < vistas.length; i++) vistas[i].textContent = texto || EJEMPLO;
+      }
+      function mostrarRecordatorios() {
+        for (var i = 0; i < recordatorios.length; i++) {
+          recordatorios[i].hidden = !correo;
+          recordatorios[i].querySelector('strong').textContent = correo || '';
+        }
+      }
+      function quitarError() {
+        error.textContent = '';
+        campo.removeAttribute('aria-invalid');
+      }
+      function abrir() {
+        if (modal.open) return;
+        campo.value = correo || '';
+        pintarCorreo(correo);
+        quitarError();
+        modal.showModal();
+        modal.focus(); // si no, el foco cae en la X y se ve un anillo alrededor
+      }
+
+      campo.addEventListener('input', function () {
+        var texto = limpio();
+        pintarCorreo(texto);
+        if (error.textContent && esGmail(texto)) quitarError();
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var texto = limpio();
+        if (!esGmail(texto)) {
+          error.textContent = /@gmail\.co$/.test(texto)
+            ? 'Revisa el final: es @gmail.com (con "m").'
+            : 'Escribe tu correo de Gmail: tiene que terminar en @gmail.com.';
+          campo.setAttribute('aria-invalid', 'true');
+          campo.focus();
+          return;
+        }
+        correo = texto;
+        try { sessionStorage.setItem(CLAVE, correo); } catch (err) {}
+        mostrarRecordatorios();
+        var ir = destino;
+        modal.close();
+        if (ir) window.open(ir, '_blank', 'noopener');
+      });
+
+      modal.addEventListener('close', function () { destino = null; });
+      document.getElementById('avisoCorreoCerrar').addEventListener('click', function () { modal.close(); });
+
+      // Ningún paso arranca sin confirmar el correo.
+      var botones = document.querySelectorAll('.pasos a.boton');
+      for (var i = 0; i < botones.length; i++) {
+        botones[i].addEventListener('click', function (e) {
+          if (correo) return;
+          e.preventDefault();
+          destino = this.href;
+          abrir();
+        });
+      }
+      var cambiar = document.querySelectorAll('.cambiar-correo');
+      for (var j = 0; j < cambiar.length; j++) cambiar[j].addEventListener('click', abrir);
+
+      // Se abre sola al llegar a los 3 pasos (cuando el paso 1 está a la vista).
+      var primerPaso = document.querySelector('.pasos .paso');
+      if (!correo && primerPaso && 'IntersectionObserver' in window) {
+        var observador = new IntersectionObserver(function (entradas) {
+          for (var k = 0; k < entradas.length; k++) {
+            if (entradas[k].isIntersecting) {
+              observador.disconnect();
+              if (!correo) abrir();
+              return;
+            }
+          }
+        }, { threshold: 0.5 });
+        observador.observe(primerPaso);
+      }
+
+      mostrarRecordatorios();
+    })();
+  </script>
 </body>
 </html>
