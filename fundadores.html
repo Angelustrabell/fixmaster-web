@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Técnicos fundadores en Fusagasugá | FixMaster</title>
+  <meta name="description" content="Buscamos 20 técnicos en Fusagasugá para estrenar FixMaster: los clientes publican el trabajo y tú ofertas tu precio. Gratis y sin comisiones.">
+  <!-- Página temporal de la prueba cerrada de Google Play: que no aparezca en Google -->
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0EA5E9">
+
+  <!-- Vista previa al compartir el enlace por WhatsApp -->
+  <meta property="og:site_name" content="FixMaster">
+  <meta property="og:title" content="Buscamos 20 técnicos fundadores en Fusagasugá">
+  <meta property="og:description" content="Los clientes publican el trabajo y tú ofertas tu precio. Gratis y sin comisiones. Únete en 3 pasos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fix-master.com.co/fundadores.html">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:image" content="https://fix-master.com.co/og-fundadores.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #0EA5E9;
+      --primary-dark: #0284C7;
+      --dark: #1E293B;
+      --surface: #334155;
+      --bg: #F8FAFC;
+      --border: #E2E8F0;
+      --muted: #94A3B8;
+      --success: #22C55E;
+      --white: #FFFFFF;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--dark);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+    }
+    .nav-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 60px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 19px;
+      font-weight: 800;
+    }
+    .logo-icon { width: 30px; height: 30px; }
+    .logo-fix { color: var(--dark); }
+    .logo-master { color: var(--primary); }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── Portada ── */
+    .hero {
+      background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 40px 0 48px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 8vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,.92);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    section { padding: 36px 0 8px; }
+    section:last-of-type { padding-bottom: 40px; }
+    h2 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .intro {
+      color: var(--surface);
+      margin-bottom: 20px;
+    }
+
+    /* ── Pasos ── */
+    .pasos {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .paso {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .paso-cabecera {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .paso-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .paso-titulo { font-size: 17px; font-weight: 700; }
+    .paso-nota {
+      font-size: 14px;
+      color: var(--surface);
+      margin-bottom: 14px;
+    }
+    .boton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .boton:hover, .boton:active { background: var(--primary-dark); }
+    .boton-whatsapp { background: var(--success); }
+    .boton-whatsapp:hover, .boton-whatsapp:active { background: #16A34A; }
+
+    .aviso {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--surface);
+    }
+    .aviso strong { color: var(--dark); }
+    .aviso ul { padding-left: 18px; margin-top: 6px; }
+    .aviso li { margin-bottom: 4px; }
+
+    /* ── Beneficios ── */
+    .beneficios {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .beneficio {
+      display: flex;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .beneficio-icono { font-size: 24px; line-height: 1.2; }
+    .beneficio-titulo { font-weight: 700; margin-bottom: 2px; }
+    .beneficio-desc { font-size: 14px; color: var(--surface); }
+
+    /* ── Nota de Cris ── */
+    .nota {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .nota p { color: #CBD5E1; margin-bottom: 12px; }
+    .nota .firma { color: var(--white); font-weight: 700; margin-bottom: 18px; }
+
+    footer {
+      text-align: center;
+      padding: 8px 20px 40px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="38" height="38" rx="10" fill="#0EA5E9"/>
+          <path d="M21.5 6L11 21h7L15 32l13-15h-7z" fill="white"/>
+        </svg>
+        <span><span class="logo-fix">Fix</span><span class="logo-master">Master</span></span>
+      </a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Fusagasugá · Prueba cerrada</span>
+      <h1>Buscamos 20 técnicos fundadores</h1>
+      <p>En FixMaster los clientes publican el trabajo que necesitan y tú ofertas tu precio. Gratis y sin comisiones.</p>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <h2>Únete en 3 pasos</h2>
+        <p class="intro">Toma un minuto. Hazlo desde tu celular Android y en este orden.</p>
+
+        <ol class="pasos">
+          <li class="paso">
+            <div class="paso-cabecera"><span class="paso-num">1</span><span class="paso-titulo">Entra al grupo de fundadores</span></div>
+            <p class="paso-nota">Con la misma cuenta de Gmail que usas en la Play Store de tu celular.</p>
+            <!-- Enlace del Google Group: cambiarlo si el grupo se crea con otro nombre -->
+            <a class="boton" href="https://groups.google.com/g/fixmaster-testers" target="_blank" rel="noopener">Unirme al grupo</a>
+          </li>
+          <li class="paso">
+            <div class="paso-cabecera"><span class="paso-num">2</span><span class="paso-titulo">Acepta la prueba de FixMaster</span></div>
+            <p class="paso-nota">Se abre Google Play: toca el botón para unirte como tester.</p>
+            <a class="boton" href="https://play.google.com/apps/testing/com.fixmaster.app" target="_blank" rel="noopener">Aceptar la prueba</a>
+          </li>
+          <li class="paso">
+            <div class="paso-cabecera"><span class="paso-num">3</span><span class="paso-titulo">Instala la app</span></div>
+            <p class="paso-nota">Si todavía no te deja instalarla, espera unos minutos y vuelve a intentar. Luego crea tu cuenta y activa el <strong>Modo profesional</strong> desde tu perfil.</p>
+            <a class="boton" href="https://play.google.com/store/apps/details?id=com.fixmaster.app" target="_blank" rel="noopener">Abrir en Play Store</a>
+          </li>
+        </ol>
+
+        <div class="aviso">
+          <strong>Para que tu participación cuente:</strong>
+          <ul>
+            <li>Usa la <strong>misma cuenta de Google</strong> en los 3 pasos.</li>
+            <li>Si ya tenías FixMaster instalada desde otro enlace, <strong>desinstálala primero</strong>.</li>
+            <li>Mantén la app instalada y ábrela seguido durante <strong>14 días</strong>: es lo que pide Google para abrirla al público.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>¿Por qué ser fundador?</h2>
+        <p class="intro">Entras antes que nadie a FixMaster en Fusagasugá.</p>
+        <ul class="beneficios">
+          <li class="beneficio">
+            <span class="beneficio-icono" aria-hidden="true">&#128178;</span>
+            <div>
+              <div class="beneficio-titulo">Tú pones el precio</div>
+              <div class="beneficio-desc">Ves el trabajo con fotos o video, propones tu precio y negocias con el cliente.</div>
+            </div>
+          </li>
+          <li class="beneficio">
+            <span class="beneficio-icono" aria-hidden="true">&#128176;</span>
+            <div>
+              <div class="beneficio-titulo">Gratis y sin comisiones</div>
+              <div class="beneficio-desc">El cliente te paga directo a ti, en efectivo o transferencia.</div>
+            </div>
+          </li>
+          <li class="beneficio">
+            <span class="beneficio-icono" aria-hidden="true">&#11088;</span>
+            <div>
+              <div class="beneficio-titulo">Tu reputación desde el primer día</div>
+              <div class="beneficio-desc">Cada trabajo terminado suma calificaciones que verán los clientes cuando la app abra al público.</div>
+            </div>
+          </li>
+          <li class="beneficio">
+            <span class="beneficio-icono" aria-hidden="true">&#128172;</span>
+            <div>
+              <div class="beneficio-titulo">Línea directa para mejorar la app</div>
+              <div class="beneficio-desc">Lo que nos cuentes en esta etapa nos ayuda a definir cómo queda FixMaster.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>¿Quién puede ser fundador?</h2>
+        <p class="intro">Técnicos y profesionales de Fusagasugá con celular Android, en cualquiera de los 24 oficios de la app: plomería, electricidad, gas, cerrajería, pintura, aire acondicionado, reformas, carpintería, jardinería, limpieza, trasteos, barbería, peluquería, manicure, domicilios y más.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Antes de ofertar: verificación</h2>
+        <p class="intro">Para proteger a los hogares, cada técnico verifica su identidad una sola vez: número de cédula, fotos del documento y una selfie. La revisión es manual y te llega una notificación con el resultado. Los clientes solo ven el sello de verificado; tu cédula no se muestra.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="nota">
+          <p>Estoy armando el grupo de los primeros 20 técnicos de Fusagasugá para estrenar FixMaster con trabajo real. Si tienes dudas o algo no te funciona en los pasos, escríbeme.</p>
+          <p class="firma">Cris, creador de FixMaster</p>
+          <a class="boton boton-whatsapp" href="https://wa.me/573018978892?text=Hola%20Cris%2C%20quiero%20ser%20t%C3%A9cnico%20fundador%20de%20FixMaster%20en%20Fusagasug%C3%A1" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 FixMaster &middot; <a href="index.html">Inicio</a> &middot; <a href="terminos.html">Términos</a> &middot; <a href="privacidad.html">Privacidad</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funcionalidades y seguridad de la app | FixMaster</title>
+  <meta name="description" content="Subasta con negociación, chat, seguimiento en vivo, factura y contabilidad del hogar, con profesionales verificados y calificaciones reales.">
+  <link rel="canonical" href="https://fix-master.com.co/funcionalidades.html">
+  <meta name="theme-color" content="#0EA5E9">
+
+  <!-- Vista previa al compartir el enlace -->
+  <meta property="og:site_name" content="FixMaster">
+  <meta property="og:title" content="Funcionalidades de FixMaster">
+  <meta property="og:description" content="Subasta con negociación, chat, seguimiento en vivo, factura y contabilidad del hogar, con profesionales verificados y calificaciones reales.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fix-master.com.co/funcionalidades.html">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:image" content="https://fix-master.com.co/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FixMaster: profesionales del hogar de confianza">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css?v=20260911">
+</head>
+<body>
+
+  <!-- ====== NAV (igual en todas las páginas: si cambias el menú, cámbialo en todas) ====== -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="38" height="38" rx="10" fill="#0EA5E9"/>
+          <path d="M21.5 6L11 21h7L15 32l13-15h-7z" fill="white"/>
+        </svg>
+        <span><span class="logo-fix">Fix</span><span class="logo-master">Master</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="como-funciona.html">Cómo funciona</a>
+        <a href="funcionalidades.html" aria-current="page">Funcionalidades</a>
+        <a href="profesionales.html">Profesionales</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="preguntas-frecuentes.html">Preguntas</a>
+        <a href="#unete" class="btn btn-primary nav-cta">Únete</a>
+      </div>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="como-funciona.html">Cómo funciona</a>
+      <a href="funcionalidades.html" aria-current="page">Funcionalidades</a>
+      <a href="profesionales.html">Profesionales</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+      <a href="#unete" onclick="closeMenu()">Únete a la prueba</a>
+    </div>
+  </nav>
+
+  <!-- ====== ENCABEZADO ====== -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-label">Funcionalidades</span>
+      <h1 class="section-title">Todo lo que necesitas, en una app</h1>
+      <p class="section-subtitle">Diseñada para que contrates con confianza y el profesional trabaje tranquilo.</p>
+    </div>
+  </header>
+
+  <!-- ====== FUNCIONALIDADES ====== -->
+  <section>
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#128176;</div>
+          <h3 class="feature-title">Subasta con negociación</h3>
+          <p class="feature-desc">Los profesionales compiten con su precio. Tú comparas, haces contraofertas y eliges. Precios justos por competencia real.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#128205;</div>
+          <h3 class="feature-title">Seguimiento GPS en vivo</h3>
+          <p class="feature-desc">Ve al profesional en camino con su ubicación en tiempo real y recibe un aviso cuando llegue.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#128172;</div>
+          <h3 class="feature-title">Chat en tiempo real</h3>
+          <p class="feature-desc">Comunícate directo con el profesional, con indicadores de "en línea" y "escribiendo". Los acuerdos quedan por escrito.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#128737;&#65039;</div>
+          <h3 class="feature-title">Profesionales verificados</h3>
+          <p class="feature-desc">Antes de tomar trabajos, cada profesional verifica su identidad con cédula y selfie. Los verificados llevan el sello &#10004;.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#11088;</div>
+          <h3 class="feature-title">Calificaciones reales</h3>
+          <p class="feature-desc">Ambas partes califican al terminar. Solo de servicios reales completados en la app.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#129534;</div>
+          <h3 class="feature-title">Factura automática</h3>
+          <p class="feature-desc">Al completar el servicio se genera la factura con el valor, el método de pago y los datos del profesional.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#127968;</div>
+          <h3 class="feature-title">Contabilidad del hogar</h3>
+          <p class="feature-desc">Tu hogar tiene memoria: cada servicio queda registrado. Suma gastos con foto del recibo, ponte un presupuesto y exporta a PDF o Excel.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#128188;</div>
+          <h3 class="feature-title">Contabilidad del profesional</h3>
+          <p class="feature-desc">Tus trabajos e ingresos quedan registrados. Suma tus gastos y mira tu ganancia real por trabajo.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#128260;</div>
+          <h3 class="feature-title">Una app, dos roles</h3>
+          <p class="feature-desc">Cliente y profesional con la misma cuenta. Cambia de rol desde tu perfil en un toque.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SEGURIDAD ====== -->
+  <section class="trust-section" id="seguridad">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Seguridad</span>
+        <h2 class="section-title">Tu tranquilidad es nuestra prioridad</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card reveal">
+          <div class="trust-icon" aria-hidden="true">&#128737;&#65039;</div>
+          <h3 class="trust-title">Identidad verificada</h3>
+          <p class="trust-desc">Los profesionales verifican su identidad con cédula y selfie antes de tomar trabajos. Los verificados llevan un sello &#10004; visible.</p>
+        </div>
+        <div class="trust-card reveal">
+          <div class="trust-icon" aria-hidden="true">&#128176;</div>
+          <h3 class="trust-title">Precio acordado</h3>
+          <p class="trust-desc">El precio se negocia y queda registrado en la app antes de empezar. La factura muestra el valor final.</p>
+        </div>
+        <div class="trust-card reveal">
+          <div class="trust-icon" aria-hidden="true">&#11088;</div>
+          <h3 class="trust-title">Calificaciones reales</h3>
+          <p class="trust-desc">Solo de servicios completados en la app. Nada de reseñas falsas ni autocalificaciones.</p>
+        </div>
+        <div class="trust-card reveal">
+          <div class="trust-icon" aria-hidden="true">&#128737;</div>
+          <h3 class="trust-title">Antifraude</h3>
+          <p class="trust-desc">No puedes tomar tus propias solicitudes ni autocalificarte. El precio de una oferta no se puede alterar.</p>
+        </div>
+        <div class="trust-card reveal">
+          <div class="trust-icon" aria-hidden="true">&#128680;</div>
+          <h3 class="trust-title">Denuncias y bloqueo</h3>
+          <p class="trust-desc">Si algo no está bien, denuncia y bloquea al usuario desde la app. Revisamos las denuncias.</p>
+        </div>
+        <div class="trust-card reveal">
+          <div class="trust-icon" aria-hidden="true">&#128274;</div>
+          <h3 class="trust-title">Datos protegidos</h3>
+          <p class="trust-desc">Tu información se protege con controles de acceso por usuario, conforme a la Ley 1581 de Colombia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ÚNETE (igual en todas las páginas) ====== -->
+  <section class="cta-section" id="unete">
+    <div class="container">
+      <div class="reveal">
+        <h2 class="section-title">Estamos en prueba en Fusagasugá</h2>
+        <p class="cta-desc">
+          FixMaster está en prueba cerrada en Google Play. Si eres técnico, únete a los 20 fundadores. Si necesitas un servicio en Fusagasugá, escríbenos.
+        </p>
+        <div class="cta-buttons">
+          <a href="fundadores.html" class="btn btn-white btn-lg">Soy técnico: quiero ser fundador</a>
+          <a href="https://wa.me/573018978892?text=Hola%2C%20necesito%20un%20t%C3%A9cnico%20en%20Fusagasug%C3%A1" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+            <img src="img/whatsapp.svg" alt="" width="20" height="20">
+            Necesito un técnico
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER (igual en todas las páginas) ====== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32" aria-hidden="true">
+              <rect width="38" height="38" rx="10" fill="#0EA5E9"/>
+              <path d="M21.5 6L11 21h7L15 32l13-15h-7z" fill="white"/>
+            </svg>
+            <span><span class="logo-fix">Fix</span><span class="logo-master">Master</span></span>
+          </div>
+          <p class="footer-desc">
+            Conectamos hogares con profesionales de confianza en Fusagasugá, Colombia. Tu precio justo, tu profesional elegido.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Producto</h4>
+          <a href="como-funciona.html">Cómo funciona</a>
+          <a href="funcionalidades.html">Funcionalidades</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Profesionales</h4>
+          <a href="profesionales.html">Beneficios</a>
+          <a href="fundadores.html">Técnicos fundadores</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacidad.html">Política de privacidad</a>
+          <a href="terminos.html">Términos y condiciones</a>
+          <a href="eliminar-cuenta.html">Eliminar cuenta</a>
+          <a href="mailto:fixmasterappp@gmail.com">Contacto</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 FixMaster. Todos los derechos reservados.</span>
+        <span>Hecho con &#9889; en Colombia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/sitio.js?v=20260911"></script>
+</body>
+</html>
