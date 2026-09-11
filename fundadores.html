@@ -356,12 +356,12 @@
     <section>
       <div class="container">
         <h2>Únete en 3 pasos</h2>
-        <p class="intro">Toma un minuto. Hazlo desde tu celular Android y en este orden.</p>
+        <p class="intro">Toma un minuto. Hazlo en <strong>Chrome</strong>, en el mismo celular donde tienes la Play Store, y en este orden.</p>
 
         <ol class="pasos">
           <li class="paso">
             <div class="paso-cabecera"><span class="paso-num">1</span><span class="paso-titulo">Entra al grupo de fundadores</span></div>
-            <p class="paso-nota">Con la misma cuenta de Gmail que usas en la Play Store de tu celular. Toca <strong>Unirse al grupo</strong>, junto al nombre FixMaster Testers. Si no ves ese botón, toca <strong>Acceder</strong> (arriba a la derecha) y entra con tu Gmail.</p>
+            <p class="paso-nota">Con la misma cuenta de Gmail que usas en la Play Store de tu celular. Toca <strong>Unirse al grupo</strong>, junto al nombre FixMaster Testers. Si no ves ese botón, toca <strong>Acceder</strong> (arriba a la derecha) y entra con tu Gmail. No necesitas recordar tu contraseña: en Chrome tu cuenta ya está en el celular, solo tócala.</p>
             <p class="paso-cuenta" hidden>Tu cuenta: <strong></strong> <button type="button" class="cambiar-correo">Cambiar</button></p>
             <!-- Google Group fixmaster-testers@googlegroups.com (lista de testers de la prueba cerrada en Play Console).
                  Enlaza a /about: la portada del grupo les dice "No tienes permiso para acceder a este contenido" a quienes
@@ -376,7 +376,7 @@
           </li>
           <li class="paso">
             <div class="paso-cabecera"><span class="paso-num">3</span><span class="paso-titulo">Instala la app</span></div>
-            <p class="paso-nota">Si todavía no te deja instalarla, espera unos minutos y vuelve a intentar. Luego crea tu cuenta y activa el <strong>Modo profesional</strong> desde tu perfil.</p>
+            <p class="paso-nota">Antes de instalar, revisa que la Play Store esté con <strong>ese mismo correo</strong>: toca tu foto, arriba a la derecha. Si todavía no te deja instalarla, espera unos minutos y vuelve a intentar. Luego crea tu cuenta y activa el <strong>Modo profesional</strong> desde tu perfil.</p>
             <p class="paso-cuenta" hidden>Tu cuenta: <strong></strong> <button type="button" class="cambiar-correo">Cambiar</button></p>
             <a class="boton" href="https://play.google.com/store/apps/details?id=com.fixmaster.app" target="_blank" rel="noopener">Abrir en Play Store</a>
           </li>
@@ -386,6 +386,7 @@
           <strong>Para que tu participación cuente:</strong>
           <ul>
             <li>Usa la <strong>misma cuenta de Google</strong> en los 3 pasos.</li>
+            <li>Si abriste esta página dentro de WhatsApp, toca <strong>&#8942;</strong> (arriba a la derecha) y elige <em>Abrir en Chrome</em>.</li>
             <li>Si ya tenías FixMaster instalada desde otro enlace, <strong>desinstálala primero</strong>.</li>
             <li>Mantén la app instalada y ábrela seguido durante <strong>14 días</strong>: es lo que pide Google para abrirla al público.</li>
           </ul>
@@ -495,9 +496,13 @@
       var error = document.getElementById('correoPlayError');
       var vistas = modal.querySelectorAll('[data-correo]');
       var recordatorios = document.querySelectorAll('.paso-cuenta');
+      var botones = document.querySelectorAll('.pasos a.boton');
       var destino = null; // botón de paso que se tocó antes de confirmar el correo
       var correo = null;
       try { correo = sessionStorage.getItem(CLAVE); } catch (e) {}
+
+      // La dirección de cada paso, sin cuenta: es la base a la que se le agrega authuser.
+      for (var b = 0; b < botones.length; b++) botones[b].setAttribute('data-base', botones[b].getAttribute('href'));
 
       // Usuario de Gmail: letras, números y puntos (sin punto al inicio, al final ni dos seguidos).
       function esGmail(texto) {
@@ -509,10 +514,24 @@
       function pintarCorreo(texto) {
         for (var i = 0; i < vistas.length; i++) vistas[i].textContent = texto || EJEMPLO;
       }
-      function mostrarRecordatorios() {
+      // Google abre el enlace con esta cuenta si ya está iniciada en el navegador (parámetro authuser).
+      function conCuenta(direccion) {
+        if (!correo) return direccion;
+        try {
+          var u = new URL(direccion);
+          u.searchParams.set('authuser', correo);
+          return u.href;
+        } catch (e) {
+          return direccion;
+        }
+      }
+      function aplicarCorreo() {
         for (var i = 0; i < recordatorios.length; i++) {
           recordatorios[i].hidden = !correo;
           recordatorios[i].querySelector('strong').textContent = correo || '';
+        }
+        for (var j = 0; j < botones.length; j++) {
+          botones[j].href = conCuenta(botones[j].getAttribute('data-base'));
         }
       }
       function quitarError() {
@@ -547,22 +566,21 @@
         }
         correo = texto;
         try { sessionStorage.setItem(CLAVE, correo); } catch (err) {}
-        mostrarRecordatorios();
+        aplicarCorreo();
         var ir = destino;
         modal.close();
-        if (ir) window.open(ir, '_blank', 'noopener');
+        if (ir) window.open(conCuenta(ir), '_blank', 'noopener');
       });
 
       modal.addEventListener('close', function () { destino = null; });
       document.getElementById('avisoCorreoCerrar').addEventListener('click', function () { modal.close(); });
 
       // Ningún paso arranca sin confirmar el correo.
-      var botones = document.querySelectorAll('.pasos a.boton');
       for (var i = 0; i < botones.length; i++) {
         botones[i].addEventListener('click', function (e) {
           if (correo) return;
           e.preventDefault();
-          destino = this.href;
+          destino = this.getAttribute('data-base');
           abrir();
         });
       }
@@ -584,7 +602,7 @@
         observador.observe(primerPaso);
       }
 
-      mostrarRecordatorios();
+      aplicarCorreo();
     })();
   </script>
 </body>
